@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons with Images</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="button-column">
+        <button class="image-button">
+            <img src="images/Walker Pitts.png" onclick="showPopup('images/Walker Pitts Pop Up.png')">
+            <div class="button-text-wrapper">
+                <span class="button-text">ABOUT</span>
+                <span class="button-subtext">MY PORTFOLIO</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Obstacles.png" onclick="redirectTo('https://drive.google.com/file/d/17XnJI2lQRB0whGm3gTAFyhbRzRbDhI2x/view?usp=sharing')">
+            <div class="button-text-wrapper">
+                <span class="button-text">OBSTACLES</span>
+                <span class="button-subtext">(SCRIPT.WRITER.SPRING2025)</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Keys.png" onclick="redirectTo('https://drive.google.com/file/d/161uDd7LztvnukhEj18-z5_SR3-KoHOwZ/view?usp=sharing')">
+            <div class="button-text-wrapper">
+                <span class="button-text">KEYS</span>
+                <span class="button-subtext">(SCRIPT.WRITER.SPRING2025)</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Derelict.png" onclick="redirectTo('https://drive.google.com/file/d/1uoQv_vQQy9HeCCYGdqAcYN80ql_cJF5h/view?usp=sharing')">
+            <div class="button-text-wrapper">
+                <span class="button-text">DERELICT</span>
+                <span class="button-subtext">(FILM.DIRECTOR.FALL2024)</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Eurydice.png" onclick="showPopup('images/EuryPop.png')">
+            <div class="button-text-wrapper">
+                <span class="button-text">EURYDICE</span>
+                <span class="button-subtext">(PLAY.PRODUCER.SPRING2023)</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Glengarry Glen Ross.png" onclick="showPopup('images/GarryPop.png')">
+            <div class="button-text-wrapper">
+                <span class="button-text">GLENGARRY GLEN ROSS</span>
+                <span class="button-subtext">(PLAY.DIRECTOR.SPRING2023)</span>
+            </div>
+        </button>
+        <button class="image-button">
+            <img src="images/Pinter Festival.png" onclick="showPopup('images/PinterPop.png')">
+            <div class="button-text-wrapper">
+                <span class="button-text">PINTER FESTIVAL</span>
+                <span class="button-subtext">(THEATERFESTIVAL.DIRECTOR.FALL2023)</span>
+            </div>
+        </button>
+    </div>
+    <div id="popup" class="popup" onclick="hidePopup()">
+        <img id="popup-image" src="" alt="Popup Image">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

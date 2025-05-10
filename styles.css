@@ -1,0 +1,113 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Align items to the top of the viewport */
+    height: auto; /* Allow the body to grow vertically */
+    overflow-x: hidden; /* Only hide horizontal overflow */
+}
+
+.button-column {
+    width: 100vw;
+}
+
+.image-button {
+    width: 100%;
+    padding: 0; /* Remove any padding */
+    border: none; /* Remove the border */
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    display: block;
+    text-align: left; /* Left-align the button text */
+}
+
+.image-button img {
+    width: 100%;
+    height: auto; /* Automatically adjusts height based on image aspect ratio */
+    display: block;
+    transition: filter 0.3s ease; /* Smooth transition for the brightness effect */
+}
+
+.image-button:hover img {
+    filter: brightness(0.5); /* Make the image darker on hover */
+}
+
+.image-button .button-text-wrapper {
+    color: white;
+    position: absolute;
+    top: 50%; /* Vertically center the text */
+    left: 5%; /* Add padding on the left for the text */
+    transform: translateY(-50%); /* Center vertically */
+    width: 90%; /* Limit the width of the text container */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.image-button .button-text {
+    font-size: calc(3vw); /* Dynamically adjust font size based on button width */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.image-button:hover .button-text {
+    opacity: 1; /* Make the text visible on hover */
+}
+
+.image-button .button-subtext {
+    font-size: calc(1vw); /* Dynamically adjust font size based on button width */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.image-button:hover .button-subtext {
+    opacity: 1; /* Make the text visible on hover */
+}
+
+/* Popup styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.popup img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* Darken background when popup is active */
+body.popup-active {
+    overflow: hidden; /* Disable scrolling */
+    position: relative;
+}
+
+body.popup-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 999; /* Behind the popup */
+}
