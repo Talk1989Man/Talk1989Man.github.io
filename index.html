@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vigenère Cipher</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Vigenère Cipher</h1>
+
+  <div class="tabs" role="tablist">
+    <button id="tab-encrypt" class="tab active" role="tab" aria-selected="true" data-mode="encrypt">ENCRYPTER</button>
+    <button id="tab-decrypt" class="tab" role="tab" aria-selected="false" data-mode="decrypt">DECRYPTER</button>
+  </div>
+
+  <label for="text" id="text-label">Plaintext</label>
+  <textarea id="text" rows="6" placeholder="ENTER SECRET MESSAGE HERE" spellcheck="false"></textarea>
+
+  <label for="key">Key</label>
+  <input id="key" type="text" placeholder="SECRET KEYWORD HERE" spellcheck="false" autocomplete="off">
+  <p class="hint" id="key-hint"></p>
+
+  <button id="run" class="run">Encrypt</button>
+</main>
+
+<!-- Fake "hard at work" machine. Runs for a random stretch, then reveals the note. -->
+<div id="processing" class="overlay" hidden>
+  <div class="proc-window" role="dialog" aria-modal="true" aria-labelledby="proc-title">
+    <div class="proc-title" id="proc-title">PROCESSING</div>
+    <div class="proc-body">
+      <ul id="proc-log" class="proc-log"></ul>
+      <div class="meter"><div id="meter-fill" class="meter-fill"></div></div>
+      <div class="proc-pct"><span id="proc-pct">0</span>% COMPLETE</div>
+    </div>
+  </div>
+</div>
+
+<div id="note-overlay" class="overlay" hidden>
+  <div class="note" role="dialog" aria-modal="true" aria-labelledby="note-title">
+    <button id="note-close" class="note-close" aria-label="Close secret message">&times;</button>
+    <span class="tape"></span>
+    <h2 class="note-title" id="note-title">Encrypted Message</h2>
+    <p id="note-text" class="note-text"></p>
+    <button id="copy" class="note-copy">Copy</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
